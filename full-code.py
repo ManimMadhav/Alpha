@@ -4,7 +4,8 @@ from chatterbot.trainers import ListTrainer
 
 #creating an instance of class ChatBot
 
-mybot = ChatBot(name='Alpha', read_only = True, logic_adapters = ['chatterbot.logic.MathematicalEvaluation','chatterbot.logic.BestMatch'])
+#BestMatch helps Alpha select a proper response from the given list of responses
+mybot = ChatBot(name='Alpha', read_only = True, logic_adapters = ['chatterbot.logic.BestMatch'])
 
 #training the bot
 #initially training the bot to a certain set of responses
@@ -20,7 +21,8 @@ social_talk = ['Hello.',
               'hope all is well and good',
               'stay safe from covid-19',
               'glad to hear this!',
-              'idk if you guessed this, but i/m a bot!']
+              'how you doing?',
+              'Hope all is well.']
 
 #feeding the list of strings to ListTrainer
 list_train = ListTrainer(mybot)
