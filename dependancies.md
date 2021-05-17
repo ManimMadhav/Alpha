@@ -2,4 +2,5 @@ Before you can run the code remotely, you require the ChatterBot library install
 
  pip install chatterbot <br/>
  pip install chatterbot_corpus <br/>
+ pip install spacy
   
