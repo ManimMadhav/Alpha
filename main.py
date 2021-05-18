@@ -12,7 +12,7 @@ from chatterbot.trainers import ListTrainer
 
 #creating an instance of class ChatBot
 #BestMatch helps Alpha select a proper response from the given list of responses
-Mybot = ChatBot(name='Alpha', read_only = True, logic_adapters = ['chatterbot.logic.BestMatch'])
+bot = ChatBot(name='Alpha', read_only = True, logic_adapters = ['chatterbot.logic.BestMatch'])
 
 
 
@@ -37,7 +37,7 @@ social_talk = ['Hello.',
 
 
 # feeding the list of strings to ListTrainer
-list_train = ListTrainer(Mybot)
+list_train = ListTrainer(bot)
 list_train.train(social_talk)
 
 
@@ -45,4 +45,4 @@ list_train.train(social_talk)
 #return an output to the user
 #use get_response function to feed an input to Alpha and consequently return an output
 
-print(MyBot.get_response("Hi"))
+print(bot.get_response("Hi"))
