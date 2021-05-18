@@ -29,9 +29,9 @@ social_talk = ['Hello.',
                'i was made by a human',
                'glad to hear from you!',
                'hope all is well and good',
-               'stay safe from covid-19',
+               'stay safe',
                'glad to hear this!',
-               'idk if you guessed this, but i/m a bot!']
+               'i/m a bot!']
 
 
 
