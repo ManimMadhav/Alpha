@@ -8,4 +8,3 @@ I am fine, thank you! How can i help you?<br/>
 Hello<br/>
 --quit<br/>
 Bye, take care. See you soon :) <br/>
-Hi, I'm the chatbot you built<br/>
