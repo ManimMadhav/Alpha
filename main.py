@@ -1,48 +1,71 @@
-#import spacy, a module used by chatterbot
-#spaCy is a NLP library in python
-import spacy
-spacy.cli.download("en_core_web_sm")
-nlp = spacy.load('en_core_web_sm')
+#Natural Language Toolkit is a Python library
+#for NLP using Python
+import nltk
 
-#import dependancies
-#ChatterBot is a Python library that generates automated responses to a user's input
-from chatterbot import ChatBot
-from chatterbot.trainers import ListTrainer
+#chat is a class for providing logic to responses
+#reflections is a dictionary that contains input & output responses
+from nltk.chat.util import Chat, reflections
 
+#training the bot
 
-#creating an instance of class ChatBot
-#BestMatch helps Alpha select a proper response from the given list of responses
-bot = ChatBot(name='Alpha', read_only = True, logic_adapters = ['chatterbot.logic.BestMatch'])
+#providing a set of rules for responses
+social_talk = [
+    [
+        r"my name is (.*)",
+        ["Hello %1, How are you doing today ?",]
+    ],
+    [
+        r"hi|hey|hello",
+        ["Hello", "Hey there",]
+    ], 
+    [
+        r"what is your name?",
+        ["You can call me a chatbot ?",]
+    ],
+    [
+        r"how are you ?",
+        ["I am fine, thank you! How can i help you?",]
+    ],
+    [
+        r"I am fine, thank you",
+        ["great to hear that, how can i help you?",]
+    ],
+    [
+        r"how can i help you? ",
+        ["i am looking for online guides and courses to learn data science, can you suggest?", "i am looking for data science training platforms",]
+    ],
+    [
+        r"i'm (.*) doing good",
+        ["That's great to hear","How can i help you?:)",]
+    ],
+    [
+        r"i am looking for online guides and courses to learn data science, can you suggest?",
+        ["Pluralsight is a great option to learn data science. You can check their website",]
+    ],
+    [
+        r"thanks for the suggestion. do they have great authors and instructors?",
+        ["Yes, they have the world class best authors, that is their strength;)",]
+    ],
+    [
+        r"(.*) thank you so much, that was helpful",
+        ["Iam happy to help", "No problem, you're welcome",]
+    ],
+    [
+        r"quit",
+    ["Bye, take care. See you soon :) ","It was nice talking to you. See you soon :)"]
+],
+]
 
+#defining chatbot
+def bot():
+        print("Hi, I'm the chatbot you built") 
 
+bot()
 
-# training the bot
+#training chat with provided list social_talk
+chat = Chat(social_talk, reflections)
 
-# initially training the bot to a certain set of responses
-social_talk = ['Hello.',
-               'How are you?',
-               'how do you do?',
-               'hi there',
-               'i/m okay',
-               'i/m doing well',
-               'i/m feeling awesome',
-               'i was made by a human',
-               'glad to hear from you!',
-               'hope all is well and good',
-               'stay safe',
-               'glad to hear this!',
-               'i/m a bot!']
-
-
-
-
-# feeding the list of strings to ListTrainer
-list_train = ListTrainer(bot)
-list_train.train(social_talk)
-
-
-#after training the bot
-#return an output to the user
-#use get_response function to feed an input to Alpha and consequently return an output
-
-print(bot.get_response("Hi"))
+#converse function triggers the conversation
+chat.converse()
+if __name__ == "__main__":
+    bot()
