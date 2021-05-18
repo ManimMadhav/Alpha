@@ -1,5 +1,13 @@
-#after training the bot
-#return an output to the user
-#use get_response function to feed an input to Alpha and consequently return an output
+#defining chatbot
+def bot():
+        print("Hi, I'm the chatbot you built") 
 
-print(MyBot.get_response("Hello"))
+bot()
+
+#training chat with provided list social_talk
+chat = Chat(social_talk, reflections)
+
+#converse function triggers the conversation
+chat.converse()
+if __name__ == "__main__":
+    bot()
