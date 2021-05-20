@@ -1,7 +1,6 @@
 Here are some lines of output produced by Alpha: <br/>
 
 Hi, I'm the chatbot you built<br/>
-<br/>
 --Hello!<br/>
 Hello<br/>
 --how are you doing<br/>
